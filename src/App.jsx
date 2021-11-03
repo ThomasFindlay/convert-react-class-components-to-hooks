@@ -1,45 +1,36 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import ManagingStateClass from "./components/managing-state/ManagingStateClass.jsx";
+import ManagingStateHooks from "./components/managing-state/ManagingStateHooks.jsx";
+import StateChangesClass from "./components/state-changes/StateChangesClass.jsx";
+import StateChangesHooks from "./components/state-changes/StateChangesHooks.jsx";
+import FetchingDataClass from "./components/fetching-data/FetchingDataClass.jsx";
+import FetchingDataHooks from "./components/fetching-data/FetchingDataHooks.jsx";
+
+import CleanupClass from "./components/cleanup/CleanupClass.jsx";
+import CleanupHooks from "./components/cleanup/CleanupHooks.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <div className="section">
+        <ManagingStateClass />
+        <ManagingStateHooks />
+      </div>
+      <div className="section">
+        <StateChangesClass />
+        <StateChangesHooks />
+      </div>
+      <div className="section">
+        <FetchingDataClass />
+        <FetchingDataHooks />
+      </div>
+      <div className="section">
+        <CleanupClass />
+        <CleanupHooks />
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
