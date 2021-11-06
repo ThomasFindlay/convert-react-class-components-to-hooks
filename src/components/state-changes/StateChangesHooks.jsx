@@ -7,7 +7,8 @@ const StateChangesHooks = () => {
   const decrement = () => setCounter(counter => counter - 1);
 
   useEffect(() => {
-    console.log("Current counter");
+    console.log("Current counter", counter);
+    localStorage.setItem("counter", counter);
   }, [counter]);
 
   return (

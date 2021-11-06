@@ -2,12 +2,11 @@ import { Component } from "react";
 
 class CleanupClass extends Component {
   state = {
-    width: 0,
-    height: 0,
+    width: window.innerWidth,
+    height: window.innerHeight,
   };
 
   componentDidMount() {
-    this.updateWindowSize();
     window.addEventListener("resize", this.updateWindowSize, {
       passive: true,
     });

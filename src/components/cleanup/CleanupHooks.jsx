@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 
 const CleanupHooks = () => {
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
-
-  const updateWindowSize = () => {
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
-  };
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
 
   useEffect(() => {
-    updateWindowSize();
+    const updateWindowSize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    };
+
     window.addEventListener("resize", updateWindowSize, {
       passive: true,
     });

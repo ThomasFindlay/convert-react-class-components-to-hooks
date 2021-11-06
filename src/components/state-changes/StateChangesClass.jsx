@@ -7,6 +7,7 @@ class StateChangesClass extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     console.log("New counter", this.state.counter);
+    localStorage.setItem("counter", this.state.counter);
   }
 
   increment = () => {
